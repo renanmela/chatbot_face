@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 @RestController()
 @RequestMapping("webhook")
 public class WebHook {
-	private final String PAGE_TOKEN = "EAAKIOzAzo9ABAKvldf1aqOdV0blXvhkM7m3sQxqMEbnRnL6nCnTZBSOQ5QJjkHZBA9wlWZAfVm3QZAEkn3uXd5wZAFLUZCA6m0R4UciBhvIL87wZCkzlLNmhqT7znyR9Si9jyoDsb783rRxswLmWZCZC4stnJUdpvlpFZArYOsHprXyFfcw2TrGtyGe8TUg7jaSt0ZD";
+	private final String PAGE_TOKEN = "EAAKIOzAzo9ABAFktJQZBAmhFqnWUyf7ByZANl5EQRJ8THvNP2aYBySdBZCmO54OvJJZB4RMvAAosfXZCD2ZBcbe3ZCaAZC12mq3tR5aoazmgZAS65TRQZCiKlMGkdrkA9LwKYsZAtBrlWq8ZAK3BsbwJRXAcmdAUeIFOxcZBO2qVSBozEY0JCvbqv02uxO2MsWgOb0rQZD";
 	private final String VERIFY_TOKEN = "xyz";
 	private final String FB_MSG_URL="https://graph.facebook.com/v2.6/me/messages?access_token=" + PAGE_TOKEN;
 	private final RestTemplate template = new RestTemplate();
