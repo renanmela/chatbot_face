@@ -21,15 +21,17 @@ public class  WeatherWebHook {
 	}
 
 	public String getWeather(String city_name) {
-		ResponseEntity<WeatherResults> entity = template.getForEntity(WEATHER_URL+city_name, WeatherResults.class);
-		String result = "Clima não encontrado";
-		for (WeatherForecast wf : entity.getBody().getForecast()) {
-			String city = entity.getBody().getCity_name();
-			String date = wf.getDate();
-			String description = entity.getBody().getDescription();
-			int max = wf.getMax();
-			int min = wf.getMin();
-			result = construct(city, date, description, max, min);
+		String result = "";
+		if(!city_name.isEmpty()) {
+			ResponseEntity<WeatherResults> entity = template.getForEntity(WEATHER_URL + city_name, WeatherResults.class);
+			for (WeatherForecast wf : entity.getBody().getForecast()) {
+				String city = entity.getBody().getCity_name();
+				String date = wf.getDate();
+				String description = entity.getBody().getDescription();
+				int max = wf.getMax();
+				int min = wf.getMin();
+				result = construct(city, date, description, max, min);
+			}
 		}
 		return result;
 	}
